@@ -16,42 +16,22 @@
             padding:0px;
             margin:0px;
             position:relative;
-            line-height:100%;
           }
           #wrapper {
             position:relative;
             margin:30px 30px;
-              font-size:15px;
           }
           h1 {
             text-align:center;
           }
-          h2 {
-
-          }
-          h4 {
-            margin:5px 0px;
-          }
           input[type=submit], input[type=reset], input[type=button] {
             background:#444;
-            font-size:12px;
-            padding:3px 8px;
+            padding:10px 20px;
             color:#fff;
             font-family:'Poppins', Arial;
             font-weight:600;
             text-transform:uppercase;
             border:none;
-            transition:all 0.3s ease-in-out;
-            border:3px solid #fff;
-          }
-          input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
-            border:3px solid #222;
-          }
-          input[type=text] {
-            padding:10px, 20px;
-            font-family:'Poppins', Arial;
-            font-weight:400;
-            border:1px solid #ccc;
           }
           footer {
             font-size:10px;
@@ -59,8 +39,6 @@
             width:100%;
             position:absolute;
             bottom:0px;
-            padding-top:20px;
-            margin:0px;
           }
           .inline {
             display:flex;
@@ -70,13 +48,6 @@
           .inline form {
             margin:2px;
           }
-          .typefilter input {
-            font-size:12px;
-            padding:3px 8px;
-          }
-          form {
-            margin:3px;
-          }
         </style>
     </head>
 
@@ -85,8 +56,6 @@
         <h1>CS304 POKEMON DATABASE</h1>
 
         <h2>General</h2>
-        <p>If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
-
         <div class="inline">
 
           <form method="POST" action="project.php">
@@ -102,93 +71,63 @@
             </form>
         </div>
 
-        <h2>Pokedex Queries</h2>
+        <h2>Filter By Type</h2>
         <!-- count tuples -->
-        <h4>Filter By Type</h4>
-        <div class="inline typefilter">
+        <div class="inline">
 
           <!-- filter by type -->
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getNormalPokemon" name="getNormalPokemon">
-              <input type="submit" value ="Normal" name="getNormal" style="background:#D9CF9B;">
+              <input type="submit" value ="Normal" name="getNormal">
           </form>
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getGrassPokemon" name="getGrassPokemon">
-              <input type="submit" value ="Grass" name="getGrass" style="background:#51BE5D;">
+              <input type="submit" value ="Grass" name="getGrass">
           </form>
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getFirePokemon" name="getFirePokemon">
-              <input type="submit" value ="Fire" name="getFire" style="background:#EE6600;">
+              <input type="submit" value ="Fire" name="getFire">
           </form>
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getWaterPokemon" name="getWaterPokemon">
-              <input type="submit" value ="Water" name="getWater" style="background:#4C95E9;">
+              <input type="submit" value ="Water" name="getWater">
           </form>
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getGroundPokemon" name="getGroundPokemon">
-              <input type="submit" value ="Ground" name="getGround" style="background:#857156;">
+              <input type="submit" value ="Ground" name="getGround">
           </form>
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getFlyingPokemon" name="getFlyingPokemon">
-              <input type="submit" value ="Flying" name="getFlying" style="background:#D6C8EF;">
+              <input type="submit" value ="Flying" name="getFlying">
           </form>
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getPoisonPokemon" name="getPoisonPokemon">
-              <input type="submit" value ="Poison" name="getPoison" style="background:#66479F;">
+              <input type="submit" value ="Poison" name="getPoison">
           </form>
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getFightingPokemon" name="getFightingPokemon">
-              <input type="submit" value ="Fighting" name="getFighting" style="background:#CA2C2C;">
+              <input type="submit" value ="Fighting" name="getFighting">
           </form>
 
           <form method="GET" action="project.php">
               <input type="hidden" id="getBugPokemon" name="getBugPokemon">
-              <input type="submit" value ="Bug" name="getBug" style="background:#71EE56;">
-          </form>
-
-          <form method="GET" action="project.php">
-              <input type="hidden" id="getElectricPokemon" name="getElectricPokemon">
-              <input type="submit" value ="Electric" name="getElectric" style="background:#E3D236;">
-          </form>
-
-          <form method="GET" action="project.php">
-              <input type="hidden" id="getPsychicPokemon" name="getPsychicPokemon">
-              <input type="submit" value ="Psychic" name="getPsychic" style="background:#F6BCF6;">
-          </form>
-
-          <form method="GET" action="project.php">
-              <input type="hidden" id="getFairyPokemon" name="getFairyPokemon">
-              <input type="submit" value ="Fairy" name="getFairy" style="background:#F6BCBC;">
+              <input type="submit" value ="Bug" name="getBug">
           </form>
 
         </div>
 
-        <h4>Other Queries</h4>
-        <div class="inline">
-          <form method="POST" action="project.php">
-              <input type="hidden" id="searchPokemonRequest" name="searchPokemonRequest">
-              <input type="submit" value="Search Pokemon by Name" name="searchSubmit">
-              <input type="text" name="pname" placeholder="Enter species name of Pokemon">
-          </form>
-        </div>
-
-        <div class="inline">
-          <form method="POST" action="project.php">
-              <input type="hidden" id="searchIDRequest" name="searchIDRequest">
-              <input type="submit" value="Search Pokemon by ID" name="searchIDSubmit">
-              <input type="text" name="pid" placeholder="Enter id number of Pokemon">
-          </form>
-        </div>
-
+        <hr>
         <h2>Manage Your Pokemon</h2>
+        <p>If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
+
         <div class="inline">
 
         <!-- generate pokemon -->
@@ -199,35 +138,24 @@
 
             <input type="submit" value="Generate Pokemon" name="insertSubmit">
         </form>
+<!--
+        <hr />
+        <h2>Update Species Name in Species Table</h2>
+        <p>The values are case sensitive and if you enter in the wrong case, the update statement will not do anything.</p>
+        <form method="POST" action="project.php">
+            <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
+            Old Name: <input type="text" name="oldName"> <br /><br />
+            New Name: <input type="text" name="newName"> <br /><br />
+            <input type="submit" value="Update" name="updateSubmit"></p>
+        </form> -->
 
         <!-- display pokemon -->
         <form method="GET" action="project.php">
             <input type="hidden" id="displayPokemon" name="displayPokemonRequest">
             <input type="submit" value="Display Pokemon" name="displayPokemon">
         </form>
-        </div>
 
-        <!-- release pokemon -->
-        <form method="POST" action="project.php">
-            <input type="hidden" id="releasePokemonRequest" name="releasePokemonRequest">
-            <input type="submit" value="Release Pokemon" name="releaseSubmit">
-            <input type="text" name="ridID" placeholder="Enter OwnedID of Pokemon to Release">
-        </form>
-
-        <!-- change pokemon nickname -->
-        <form method="POST" action="project.php">
-            <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
-            <input type="submit" value="Change Pokemon Nickname" name="updateSubmit">
-            <input type="text" name="nidID" placeholder="Enter OwnedID of Pokemon">
-            <input type="text" name="newName" placeholder="Enter new nickname for Pokemon">
-        </form>
-
-        <!-- check Weakness -->
-        <form method="POST" action="project.php">
-            <input type="hidden" id="checkWeaknessRequest" name="checkWeaknessRequest">
-            <input type="submit" value="Check Weaknesses" name="checkWeakSubmit">
-            <input type="text" name="cwid" placeholder="Enter OwnedID of Pokemon">
-        </form>
+      </div>
 
         <hr />
 
@@ -415,31 +343,19 @@
             OCICommit($db_conn);
         }
 
-        // update nickname -- buggy rn
-        function handleUpdateRequest() {
-          global $db_conn;
+        function handleUpdateRequest($old_name) {
+            global $db_conn;
 
-          $nid = $_POST['nidID'];
-          $new_name = $_POST['newName'];
+            $new_name = $_POST['newName'];
 
-          if(isset($_POST['nidID']) && is_numeric($nid)) {
+            // you need the wrap the old name and new name values with single quotations
             if(isset($_POST['newName'])) {
-              $npoke = executePlainSQL("SELECT Nickname, OwnedID FROM Pokemon WHERE OwnedID='" . $nid . "'");
-              if(($row = oci_fetch_row($npoke)) != false) {
-                $res = executePlainSQL("UPDATE Pokemon SET Nickname='" . $new_name . "' WHERE OwnedID=$row[1]");
-                echo $row[0] . "'s nickname was updated to " . $new_name . ".";
-              } else {
-                echo "Nickname was not specified, no changes were made.";
-              }
-            } else {
-              echo "Invalid OwnedID, no changes were made.";
+              executePlainSQL("UPDATE Pokemon SET nickname='" . $new_name . "' WHERE nickname='" . $old_name . "'");
+              echo "Updated" . $new_name . "," . $old_name;
             }
-          }
-
-          OCICommit($db_conn);
+            OCICommit($db_conn);
         }
 
-        // count tuples in Pokemon and Species tables
         function handleCountRequest() {
             global $db_conn;
 
@@ -452,118 +368,31 @@
             if (($row = oci_fetch_row($resultPm)) != false) {
                 echo "<br> The number of tuples in Your Pokemon Table: " . $row[0] . "<br>";
             }
-            OCICommit($db_conn);
         }
 
-        // general function for filtering through Pokedex
         function getElem($elem) {
           global $db_conn;
-          echo "<table style='border-collapse:separate;border-spacing:20px 0px;'><tr><th>Species ID</th><th>Species</th><th>Type 1</th><th>Type 2</th></tr>";
           $res = executePlainSQL("SELECT S.ID, S.SpName, O.Type1, O.Type2 FROM Species S, ofType O WHERE S.ID=O.ID AND (O.Type1='$elem' OR O.Type2='$elem')");
           while(($row = oci_fetch_row($res)) != false) {
-            echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td>";
+            echo $row[0] . ", " . $row[1] . ", Type: " . $row[2];
             if ($row[3] != NULL) {
-              echo "<td>" . $row[3] . "</td>";
+              echo " & " . $row[3];
             }
-            echo "</tr>";
+            echo "<br>";
           }
-          echo "</table>";
-          OCICommit($db_conn);
         }
 
-        // displays all caught Pokemon
+
         function displayPokemon() {
             global $db_conn;
 
             $res = executePlainSQL("SELECT * FROM Pokemon");
-            echo "<table style='border-collapse:separate;border-spacing:20px 0px;'><tr><th>Species ID</th><th>Nickname</th><th>Gender</th><th>Time Caught</th><th>Owned ID</th></tr>";
+            echo "<table style='border-collapse:separate;border-spacing:20px 0px;'><tr><th>Species ID</th><th>Species</th><th>Gender</th><th>Time Caught</th><th>Owned ID</th></tr>";
             while (($row = oci_fetch_row($res)) != false) {
               echo "<tr><td>". $row[0] . "</td><td>" . $row[1] . "</td><td> " . $row[2] . "</td><td>" . $row[3] . ".</td><td>" . $row[4] . "</td></tr>";
             }
             echo "</table>";
-            OCICommit($db_conn);
         }
-
-        // deletes a pokemon from the Pokemon table given a valid OwnedID is provided
-        function releasePokemon() {
-          global $db_conn;
-
-          $rid = $_POST['ridID'];
-          if(isset($_POST['ridID']) && is_numeric($rid)) {
-            $rpoke = executePlainSQL("SELECT Nickname, OwnedID FROM Pokemon WHERE OwnedID='" . $rid . "'");
-            if(($row = oci_fetch_row($rpoke)) != false) {
-              $res = executePlainSQL("DELETE FROM Pokemon WHERE OwnedID=$row[1]");
-              echo $row[0] . " was released.";
-            } else {
-              echo "Invalid OwnedID. No pokemon was released.";
-            }
-          } else {
-            echo "No OwnedID was selected or improper input. No pokemon was released.";
-          }
-
-          OCICommit($db_conn);
-        }
-
-        // seach pokemon by name
-        function searchPokemon() {
-          global $db_conn;
-
-          $pname = $_POST['pname'];
-          if(isset($_POST['pname'])) {
-            $psearch = executePlainSQL("SELECT * FROM Species S, ofType O WHERE S.ID=O.ID AND S.SpName='".$pname."' ");
-            echo "<table style='border-collapse:separate;border-spacing:20px 0px;'><tr><th>Species ID</th><th>Species</th><th>Ability 1</th><th>Ability 2</th><th>Hidden Ability</th><th>Type 1</th><th>Type 2</th></tr>";
-            while (($row = oci_fetch_row($psearch)) != false) {
-              echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4]
-              . "</td><td>" . $row[6] . "</td><td>" . $row[7] . "</tr>";
-            }
-            echo "</table>";
-          }
-
-          OCICommit($db_conn);
-        }
-
-        // search pokemon by id
-        function searchID() {
-          global $db_conn;
-
-          $pid = $_POST['pid'];
-          if(isset($_POST['pid'])) {
-            $psearch = executePlainSQL("SELECT * FROM Species S, ofType O WHERE S.ID=O.ID AND S.ID='".$pid."' ");
-            echo "<table style='border-collapse:separate;border-spacing:20px 0px;'><tr><th>Species ID</th><th>Species</th><th>Ability 1</th><th>Ability 2</th><th>Hidden Ability</th><th>Type 1</th><th>Type 2</th></tr>";
-            while (($row = oci_fetch_row($psearch)) != false) {
-              echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4]
-              . "</td><td>" . $row[6] . "</td><td>" . $row[7] . "</tr>";
-            }
-            echo "</table>";
-          }
-
-          OCICommit($db_conn);
-        }
-
-        // checks a pokemon's weaknesses
-        function checkWeak() {
-          global $db_conn;
-
-          $cwid = $_POST['cwid'];
-          if(isset($_POST['cwid'])) {
-            $cwpoke = executePlainSQL("SELECT P.ID, P.Nickname, O.Type1, O.Type2 FROM Pokemon P, ofType O WHERE P.OwnedID='" . $cwid . "' AND P.ID=O.ID");
-            if(($row = oci_fetch_row($cwpoke)) != false) {
-              echo "Checking " . $row[1] . "'s weaknesses...<br>";
-              $check;
-              if ($row[3] != NULL) {
-                $check = executePlainSQL("SELECT * FROM WeakAgainst WHERE (Type1_TypeName='$row[2]' OR Type1_TypeName='$row[3]')");
-              } else {
-                $check = executePlainSQL("SELECT * FROM WeakAgainst WHERE Type1_TypeName='$row[2]'");
-              }
-              while(($row2 = oci_fetch_array($check)) != false) {
-                echo $row2[0] . " weak against " . $row2[1] . "<br>";
-              }
-            }
-          }
-
-          OCICommit($db_conn);
-        }
-
 
         // HANDLE ALL POST ROUTES
 	// A better coding practice is to have one method that reroutes your requests accordingly. It will make it easier to add/remove functionality.
@@ -575,14 +404,6 @@
                 handleUpdateRequest();
             } else if (array_key_exists('insertQueryRequest', $_POST)) {
                 handleInsertRequest();
-            } else if (array_key_exists('releasePokemonRequest', $_POST)) {
-                releasePokemon();
-            } else if (array_key_exists('searchPokemonRequest', $_POST)) {
-                searchPokemon();
-            } else if (array_key_exists('searchIDRequest', $_POST)) {
-                searchID();
-            } else if (array_key_exists('checkWeaknessRequest', $_POST)) {
-                checkWeak();
             }
 
             disconnectFromDB();
@@ -617,24 +438,18 @@
               getElem("Fighting");
             } else if (array_key_exists('getBug', $_GET)) {
               getElem("Bug");
-            } else if (array_key_exists('getElectric', $_GET)) {
-              getElem("Electric");
-            } else if (array_key_exists('getPsychic', $_GET)) {
-              getElem("Psychic");
-            } else if (array_key_exists('getFairy', $_GET)) {
-              getElem("Fairy");
             }
 
             disconnectFromDB();
         }
     }
 
-    if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit'])|| isset($_POST['releaseSubmit']) || isset($_POST['searchSubmit']) || isset($_POST['searchIDSubmit']) || isset($_POST['checkWeakSubmit'])) {
+    if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit'])) {
         handlePOSTRequest();
     } else if (isset($_GET['countTupleRequest']) || isset($_GET['showTupleRequest']) || isset($_GET['displayPokemonRequest'])) {
         handleGETRequest();
     } else if (isset($_GET['getNormalPokemon']) || isset($_GET['getGrassPokemon']) || isset($_GET['getFirePokemon']) || isset($_GET['getWaterPokemon']) || isset($_GET['getGroundPokemon']) || isset($_GET['getFlyingPokemon']) ||
-      isset($_GET['getPoisonPokemon']) || isset($_GET['getFightingPokemon']) || isset($_GET['getBugPokemon']) || isset($_GET['getElectricPokemon']) || isset($_GET['getPsychicPokemon']) || isset($_GET['getFairyPokemon'])) {
+      isset($_GET['getPoisonPokemon']) || isset($_GET['getFightingPokemon']) || isset($_GET['getBugPokemon'])) {
         handleGETRequest();
     }
 		?>
